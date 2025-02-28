@@ -20,8 +20,6 @@ export const registerClient = async (req, res) => {
 
         await Client.create({ clientId, hashedSecret });
 
-        console.log(`🔑 Client Secret: ${clientSecret}`); // Log but don't expose in production
-
         res.json({ clientId, clientSecret });
     } catch (error) {
         console.error("❌ Registration failed:", error);

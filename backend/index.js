@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRoutes from "./routes/authRoutes.js";
-import clientRoutes from "./routes/clientRoutes.js";
+import authRoutes from "./routes/authRoute.js";
+import clientRoutes from "./routes/clientRoute.js";
 
 dotenv.config();
 const app = express();
@@ -10,8 +10,8 @@ const app = express();
 app.use(express.json()); // Enable JSON parsing for requests
 
 // Routes
-app.use("/auth", authRoutes);
-app.use("/client", clientRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/client", clientRoutes);
 
 // Connect to MongoDB
 const PORT = process.env.PORT || 5000;
